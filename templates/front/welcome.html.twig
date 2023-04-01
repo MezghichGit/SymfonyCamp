@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}
+	- Welcome page
+{% endblock %}
+{% block body %}
+	{{parent()}}
+	<h2>Détails de la formation</h2>
+	<ul>
+		<li>{{formation|upper}}</li>
+		<li>{{duree}}</li>
+		<li>{{mode}}</li>
+		<li>{{formateur|upper}}</li>
+	</ul>
+
+	<h2>Liste des inscrits</h2>
+	<ul>
+		{% for stagiaire in stagiaires %}
+			<li>{{stagiaire|upper}}</li>
+		{% endfor %}
+	</ul>
+
+	<h2>Contenu des camps</h2>
+	<ul>
+		{% if camps %}
+			{% for camp in camps %}
+				<li>{{camp|upper}}</li>
+			{% endfor %}
+		{% else %}
+			<h3>
+				Pas de camps pour l'instant</h3>
+		{% endif %}
+	</ul>
+{% endblock %}
