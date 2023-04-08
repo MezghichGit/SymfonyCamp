@@ -33,10 +33,10 @@
                     <a href="{{ path('show_produit', {'id': produit.id}) }}" class="btn btn-primary">Show</a>
         </td>
          <td>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="{{ path('delete_produit', {'id': produit.id}) }}" class="btn btn-danger">Delete</a>
         </td>
           <td>
-                    <a href="#" class="btn btn-warning">Update</a>
+                    <a href="{{ path('edit_produit', {'id': produit.id}) }}" class="btn btn-warning">Update</a>
         </td>
         </tr>
          {% else %}
